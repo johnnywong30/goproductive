@@ -5,8 +5,8 @@ services:
         dockerfile: dev.Dockerfile
       ports:
         - 8000:8000
-      # volumes:
-        # - ./app:/app/tmp
+      volumes:
+        - ./app:/app/
 
 
   # Use postgres/example user/password credentials
