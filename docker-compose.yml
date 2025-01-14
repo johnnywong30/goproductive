@@ -1,26 +1,26 @@
 services:
-  app:
+  flowgo:
       build: 
         context: .
         dockerfile: dev.Dockerfile
       ports:
         - 8000:8000
       volumes:
-        - ./app:/app/
+        - ./flowgo:/flowgo/
 
 
   # Use postgres/example user/password credentials
-  # db:
-  #   image: postgres
-  #   restart: always
-  #   shm_size: 128mb
-  #   environment:
-  #     POSTGRES_PASSWORD: example
+  db:
+    image: postgres
+    restart: always
+    shm_size: 128mb
+    environment:
+      POSTGRES_PASSWORD: example
 
-  # adminer:
-  #   image: adminer
-  #   restart: always
-  #   ports:
-  #     - 8080:8080
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
 
   

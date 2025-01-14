@@ -1,14 +1,14 @@
 FROM golang:1.23-alpine
 
-WORKDIR /app
+WORKDIR /flowgo
 
 RUN go install github.com/air-verse/air@latest
 
-COPY ./app/go.* .
+COPY ./flowgo/go.* .
 
 RUN go mod download
 
-COPY ./app .
+COPY ./flowgo .
 
 EXPOSE 8000
 
